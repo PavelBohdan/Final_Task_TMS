@@ -30,3 +30,13 @@ class LoginPage(BasePage):
             return True
         else:
             return False
+
+    def input_user_credentials(self):
+        '''Функция вводит логин и пароль нового пользователя'''
+        username_field = self.find_element(LoginPageLocators.USERNAME)
+        username_field.send_keys(NEW_USER_USERNAME)
+        password_field = self.find_element(LoginPageLocators.PASSWORD)
+        password_field.send_keys(NEW_USER_PASSWORD)
+        login_in_button = self.find_element(LoginPageLocators.LOGIN_IN_BUTTON)
+        login_in_button.click()
+        return AdminPage(self.browser)

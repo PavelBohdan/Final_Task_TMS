@@ -23,3 +23,7 @@ class AdminPage(BasePage):
             AdminPageLocators.LOG_OUT_LINK_LOCATOR)
         log_out_button.click()
         return LogOutPage(self.browser)
+
+    def find_welcome_user_element(self):
+        welcome_user_element = self.find_element(AdminPageLocators.WELCOME_USER_ELEMENT_LOCATOR)
+        return welcome_user_element
